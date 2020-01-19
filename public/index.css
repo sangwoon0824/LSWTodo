@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background-color: #e4e4e4;
+}
+#test {
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 1700px;
+    height: 900px;
+    background-color: beige;
+}
