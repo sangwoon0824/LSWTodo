@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+    </style>
+    
+    <script>
+        
+        
+        function chkbtn() {
+            var getid = document.getElementById("idbox");
+            var getpw = document.getElementById("pw");
+            var frm = document.getElementById("frm");
+            
+            if (getid.value == "") {
+                alert("아이디를 입력해주세요.");
+            } else {
+                if (getpw.value == "") {
+                    alert("비밀번호를 입력해주세요.");
+                } else {
+                    frm.submit();
+                }
+            }
+        }
+        
+    
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="logoimg" onclick="location.href = '/'"><img src="img/biglogo.png" alt="" style="width:360px;height:254px;" ></div>
+        <form action="/login" method="post" id="frm"> 
+            <input type="text" name="ID" id="idbox" class="boxinptext" placeholder="아이디 입력">
+            <input type="password" name="PW" id="pw" class="boxinptext" placeholder="비밀번호 입력">
+            <input type="button" name="" id="sub" value="로그인" onclick="chkbtn()">
+            </form>
+        <div id="more"> <a href="" onclick="alert('추가 예정인 기능입니다!');">아이디 찾기 </a> / <a href="" onclick="alert('추가 예정인 기능입니다!');"> 비밀번호 찾기</a> <a href="/register" style="margin-left: 235px;"> 회원가입</a> </div>
+    </div>
+</body>
+
+</html>

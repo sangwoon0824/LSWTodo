@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+    </style>
+    <script>
+        function chkpwkey() {
+            var getpw = document.getElementById("pw");
+            var getrepw = document.getElementById("repw");
+            if (getpw.value == getrepw.value) {
+                getpw.style.backgroundColor = "#CEF6CE";
+                getrepw.style.backgroundColor = "#CEF6CE";
+            }
+            else {
+                getpw.style.backgroundColor = "#F6CECE";
+                getrepw.style.backgroundColor = "#F6CECE";
+            }
+        }
+
+        function chkbtn() {
+            var getpw = document.getElementById("pw");
+            var getrepw = document.getElementById("repw");
+            var frm = document.getElementById("frm");
+            var getid = document.getElementById("idbox");
+            var getemail = document.getElementById("email");
+            var agree1 = document.getElementById("agree1").checked;
+            var agree2 = document.getElementById("agree2").checked;
+            var agree3 = document.getElementById("agree3").checked;
+            
+            if (getid.value == "") {
+                alert("아이디를 입력해주세요.");
+            } else {
+                if (getemail.value == "") {
+                    alert("이메일을 입력해주세요.");
+                } else {
+                    if (getpw == "") {
+                        alert("비밀번호를 입력해주세요.");
+                    } else {
+                        if (getpw.value == getrepw.value && getpw.value != "") {
+                            if (!agree1) {
+                                alert("~~약관에 동의해주세요.");
+                            } else {
+                                if(!agree2) {
+                                    alert("~~약관에 동의해주세요.");
+                                } else {
+                                    if(!agree3) {
+                                        alert("~~약관에 동의해주세요.");
+                                    } else {
+                                        frm.submit();
+                                    }
+                                }
+                            }
+                            
+                        } else if (getpw.value != ""){
+                            alert("비밀번호를 입력해주세요.");
+                        } else {
+                            alert("비밀번호가 일치하지 않습니다.")
+                        }
+                    }
+                }
+            }
+        }
+        
+        function chkbox(id) {
+            if (id == "checkbox1") {
+                window.open("popup/popup1.html", "a", "width=600, height=700, left=200, top=200");
+            } else if (id == "checkbox2") {
+                window.open("popup/popup1.html", "a", "width=600, height=700, left=200, top=200");
+            } else {
+                window.open("popup/popup1.html", "a", "width=600, height=700, left=200, top=200");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div id="logoimg" onclick="location.href = '/'"><img src="img/biglogo.png" alt="" style="width:360px;height:254px;" ></div>
+        <form action="/register" method="post" id="frm">
+            <input type="text" name="CRTID" id="idbox" class="boxinptext" placeholder="아이디입력" style="margin-top: 40px;">
+            <input type="text" name="CRTEMAIL" id="email" class="boxinptext" placeholder="이메일 입력">
+            <input type="password" name="CRTPW" id="pw" class="boxinptext" placeholder="비밀번호 입력">
+            <input type="password" name="" id="repw" class="boxinptext" onkeyup="chkpwkey()" placeholder="비밀번호 재입력">
+            <input type="checkbox" name="" id="agree1" class="boxchk">
+            <label for="agree1" class="agreelabel">회원가입 <a id="checkbox1" onclick="chkbox(this.id)">약관</a>에 동의합니다.</label>
+            <br>
+            <input type="checkbox" name="" id="agree2" class="boxchk">
+            <label for="agree2" class="agreelabel">개인정보처리취급<a id="checkbox2" onclick="chkbox(this.id)">약관</a>에 동의합니다.</label>
+            <br>
+            <input type="checkbox" name="" id="agree3" class="boxchk">
+            <label for="agree3" class="agreelabel">서비스 이용 <a id="checkbox3" onclick="chkbox(this.id)">약관</a>에 동의합니다.</label>
+            <input type="button" name="" id="sub" onclick="chkbtn()" value="회원가입"> </form>
+    </div>
+</body>
+
+</html>
