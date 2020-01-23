@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 });
 */
 
-//포트 설정1234
+//포트 설정1234124
 var port = process.env.PORT || 10824;
 app.use(bodyParser.urlencoded({
     extended: false
