@@ -12,8 +12,10 @@ function testcon() {
     connection.connect(function (err) {
         if (err) {
           console.error('mysql connection error :' + err);
+          connection.end();
         } else {
           console.info('mysql is connected successfully.');
+          connection.end();
         }
     })
 }
