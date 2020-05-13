@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/first', (req, res) => {
+    res.render('first');
+});
+
 app.get('/login', (req, res) => {
     res.render('login');
 });

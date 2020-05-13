@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="first.css">
+    
+</head>
+<body>
+    <div id="welcomeLogo">Logo</div>
+    <div id="welcomeLogin" class="roundbtn">로그인</div>
+    <div id="welcomeRegister" class="roundbtn" style="top: 110px">회원가입</div>
+</body>
+<script>
+    var loginbtn = document.getElementById('welcomeLogin');
+    var regibtn = document.getElementById('welcomeRegister');
+    
+    loginbtn.onclick = function () {
+        location.href = '/login';
+    }
+    
+    regibtn.onclick = function () {
+        location.href = '/register'
+    }
+
+</script>
+</html>
